@@ -11,3 +11,6 @@ node_modules/
 
 # Local image build scripts (Pillow / Windows) — generated assets are committed
 _*.py
+
+# Python bytecode cache (from running/compiling the local build scripts)
+__pycache__/

@@ -57,13 +57,13 @@ npx serve .
 
 | 플레이스홀더 | 위치 | 비고 |
 | --- | --- | --- |
-| `[이름]` | `<title>`, 헤더 로고, Hero, 소개, footer, JSON-LD | 실제 이름으로 |
-| `[직함]` | Hero 서브타이틀, JSON-LD `jobTitle` | 예: "백엔드 개발자" |
-| `[your.email@example.com]` | 연락처 이메일 (`mailto:`) | 교체 후 해당 링크의 `aria-disabled="true"`·`tabindex="-1"` 제거 |
+| `[이름]` | 헤더 로고, Hero, 소개, footer (화면 표시용) | 실제 이름으로. SEO 노출 영역(`<title>`·`description`·OG/Twitter 메타·JSON-LD)에서는 플레이스홀더가 깨져 보이거나 검색에 악영향을 줄 수 있어 이미 이름 없이 직함만 표기하도록 정리해 두었습니다. 실명이 정해지면 각 메타와 `<title>`에 `[이름] · ` 형태로 덧붙이세요. |
+| `[직함]` | Hero 서브타이틀 (화면 표시용) | 예: "백엔드 개발자" |
+| `[your.email@example.com]` | 연락처 이메일 (`mailto:` + 복사 버튼 `data-copy`) | 교체 후 해당 링크의 `aria-disabled="true"`·`tabindex="-1"` 제거, 복사 버튼 `data-copy` 값도 함께 갱신 |
 
 - **GitHub 링크는 `https://github.com/yeodh10`로 이미 설정**되어 있습니다. 프로젝트 카드의 "GitHub에서 보기"는 현재 프로필을 가리키니, 개별 저장소 주소가 있으면 교체하세요.
-- **배포 도메인이 정해지면** 가정 도메인 `https://yeodh10.github.io/` 를 실제 도메인으로 일괄 교체하세요. 영향 받는 곳: `index.html`의 `canonical`·`og:url`·`og:image`·`twitter:image`, `robots.txt`의 `Sitemap`, `sitemap.xml`의 `<loc>`. (특히 `og:image`는 상대경로가 안 되므로 절대 URL이 정확해야 공유 미리보기가 깨지지 않습니다.)
-- **OG 이미지에도 `[이름]`이 그려져** 있습니다. 실명 반영 시 `_oggen.py`를 열어 텍스트를 바꾸고 다시 실행하면 `og-image.png`가 재생성됩니다(로컬 전용 빌드 스크립트, 저장소에는 포함되지 않음 — Pillow 필요).
+- **배포 도메인 처리**: `index.html`의 `canonical`·`og:url`·`og:image`·`twitter:image`는 **루트 상대경로(`/`, `/og-image.png`)** 로 작성되어 있어 어느 도메인에 배포해도 그대로 동작합니다(도메인 하드코딩 불필요). 절대 URL이 필수인 곳은 **`robots.txt`의 `Sitemap`** 과 **`sitemap.xml`의 `<loc>`** 둘뿐이니, 배포 도메인이 정해지면 이 두 파일의 `https://yeodh10.github.io/` 만 실제 도메인으로 교체하세요.
+- **OG 이미지의 이름 표기**: 공유 카드(`og-image.png`)와 그 소스(`og-image.svg`, `_oggen.py`)는 실명 유출·플레이스홀더 노출을 막기 위해 **이름 줄 없이 직함·요약만** 표기하도록 정리되어 있습니다. 단, 현재 커밋된 `og-image.png`는 이전 버전이라 아직 `[이름]` 글자가 남아 있으니, 한 번 `_oggen.py`를 실행해 재생성하면 소스와 일치합니다(로컬 전용 빌드 스크립트, `_*.py`는 `.gitignore`로 저장소에서 제외 — Pillow 필요). 실명을 카드에 넣고 싶다면 `_oggen.py`/`og-image.svg`에 이름 줄을 추가한 뒤 재생성하세요.
 
 ## 배포
 
@@ -77,5 +77,6 @@ npx serve .
 
 순수 HTML5 · CSS3(변수·Grid·Flex·clamp) · 바닐라 JavaScript.
 웹폰트는 [Pretendard](https://github.com/orioncactus/pretendard) 가변폰트(dynamic-subset, CDN)를 사용합니다.
-SEO·공유를 위해 Open Graph / Twitter Card 메타, JSON-LD(schema.org Person) 구조화 데이터,
+SEO·공유를 위해 Open Graph / Twitter Card 메타, JSON-LD(schema.org `WebSite`) 구조화 데이터,
 `robots.txt`·`sitemap.xml`, OG 이미지(1200×630)를 포함합니다.
+(개인 정보 기반 `Person` 구조화 데이터는 이름·직함 플레이스홀더가 채워질 때까지 `index.html`에 주석으로 비활성화해 두었습니다 — 실명이 정해지면 주석을 해제하세요.)
