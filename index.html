@@ -145,11 +145,11 @@
 
         <div class="hero-stats stat-row">
           <div class="stat">
-            <span class="stat-num" data-count="2">0</span>
+            <span class="stat-num" data-count="6">0</span>
             <span class="stat-label">대표 프로젝트</span>
           </div>
           <div class="stat">
-            <span class="stat-num" data-count="2966" data-prefix="약 " data-suffix="+">0</span>
+            <span class="stat-num" data-count="16000" data-prefix="약 " data-suffix="+">0</span>
             <span class="stat-label">소스 코드 라인 수</span>
           </div>
           <div class="stat">
@@ -174,32 +174,32 @@
         <div class="section-head section-head--center reveal">
           <p class="eyebrow">총괄 현황</p>
           <h2 class="section-title">업무 총괄 현황</h2>
-          <p class="section-subtitle">풀스택 웹 개발과 AI 에이전트 자동화, 두 도메인을 직접 구현하는 개발자입니다.</p>
+          <p class="section-subtitle">실시간 협업 · AI 에이전트 · 금융 자동매매 · 프론트엔드까지 여러 도메인을 직접 구현하는 개발자입니다.</p>
         </div>
 
         <div class="overview-grid">
           <article class="stat-card reveal delay-1">
-            <span class="stat-num" data-count="2">0</span>
+            <span class="stat-num" data-count="6">0</span>
             <span class="stat-label">대표 프로젝트</span>
-            <span class="stat-sub">실시간 협업 웹앱 · AI 영업 에이전트</span>
+            <span class="stat-sub">실시간 협업 · AI 에이전트 · 금융 자동매매 · 프론트엔드 등</span>
           </article>
 
           <article class="stat-card reveal delay-2">
-            <span class="stat-num" data-count="2966" data-prefix="~">0</span>
+            <span class="stat-num" data-count="16000" data-prefix="~">0</span>
             <span class="stat-label">총 코드 라인</span>
-            <span class="stat-sub">풀스택 JS + Python 에이전트 (의존성 제외 추정치)</span>
+            <span class="stat-sub">JS · Python · Astro 등 6개 프로젝트 합산 (의존성 제외 추정치)</span>
           </article>
 
           <article class="stat-card reveal delay-3">
-            <span class="stat-num" data-count="2">0</span>
+            <span class="stat-num" data-count="5">0</span>
             <span class="stat-label">핵심 도메인</span>
-            <span class="stat-sub">실시간 협업 · 공공 보안영업 자동화</span>
+            <span class="stat-sub">실시간 협업 · 보안영업 · 금융 자동매매 · AI 챗봇 · 프론트엔드</span>
           </article>
 
           <article class="stat-card reveal delay-4">
-            <span class="stat-num" data-count="10" data-suffix="+">0</span>
+            <span class="stat-num" data-count="15" data-suffix="+">0</span>
             <span class="stat-label">활용 기술</span>
-            <span class="stat-sub">React · Socket.IO · Claude API · Streamlit · SQLite 등</span>
+            <span class="stat-sub">React · Node · Python · Claude API · Astro · GSAP · WebSocket 등</span>
           </article>
         </div>
 
@@ -347,7 +347,7 @@
         <div class="section-head reveal">
           <p class="eyebrow">프로젝트</p>
           <h2 class="section-title">Projects</h2>
-          <p class="section-subtitle">단독으로 설계·구현한 대표 프로젝트 2건입니다.</p>
+          <p class="section-subtitle">단독으로 설계·구현한 대표 프로젝트 6건입니다.</p>
         </div>
 
         <div class="projects-grid">
@@ -483,6 +483,250 @@
                 <span class="badge">공공 OpenAPI 통합(31일 분할)</span>
                 <span class="badge">결정론적 스코어링 + AI 결합</span>
                 <span class="badge">AI 안전 설계(사람 최종 검수)</span>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://github.com/yeodh10" target="_blank" rel="noopener noreferrer">
+                GitHub에서 보기<span class="sr-only">(새 탭에서 열림)</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 3: 한국투자증권 실시간 자동매매 -->
+          <article class="card card--hover project-card reveal">
+            <header class="project-head">
+              <div>
+                <h3 class="project-title">한국투자증권 실시간 자동매매</h3>
+                <p class="project-tagline">KIS Open API로 실시간 시세를 받아 자동매매·주문 저널·손실 서킷브레이커까지 갖춘 트레이딩 웹앱</p>
+              </div>
+              <span class="badge">약 11,000줄 · 의존성 0</span>
+            </header>
+
+            <p class="project-overview">
+              한국투자증권(KIS) Open API 기반 실시간 시세·자동매매 웹앱으로, <strong>npm 의존성 없이 Node 빌트인</strong>(<code>net</code>·<code>https</code>·<code>crypto</code>)만으로 RFC6455 WebSocket을 직접 구현해 실시간 체결을 SSE로 브라우저에 중계합니다.
+              주문·체결은 <code>node:sqlite</code>(WAL)에 저널링하고, 자동매매에는 손실 서킷브레이커로 리스크를 통제합니다.
+            </p>
+
+            <div class="project-block">
+              <h4>핵심 기능</h4>
+              <ul class="feature-list">
+                <li>KIS 실시간 시세 수신 — RFC6455 WebSocket 자체 구현(net/https/crypto), WS→SSE 중계</li>
+                <li>자동매매 엔진 + 손실 서킷브레이커(리스크 차단)</li>
+                <li>주문·체결 저널(node:sqlite WAL) + 체결통보 정합성 검증</li>
+                <li>인증·CORS 처리 프록시 서버 분리</li>
+                <li>자체 테스트 하니스 5종(engine·realtime·fallback·journal·auth)</li>
+                <li>전수조사 감사 워크플로(CRITICAL→LOW 등급별 발견·수정·검증)</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>기술 스택</h4>
+              <ul class="tag-list">
+                <li class="tag tag--accent">Node.js (빌트인)</li>
+                <li class="tag tag--accent">WebSocket (RFC6455 자체구현)</li>
+                <li class="tag">node:sqlite (WAL)</li>
+                <li class="tag">SSE</li>
+                <li class="tag">crypto</li>
+                <li class="tag">의존성 0</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>역할</h4>
+              <p class="project-overview">개인 프로젝트(풀스택·인프라)</p>
+            </div>
+
+            <p class="project-highlight">
+              <strong>아키텍처 하이라이트.</strong>
+              외부 라이브러리 없이 WebSocket 프로토콜(RFC6455)을 직접 구현하고, 손실 서킷브레이커와 주문 저널 정합성 검증으로 실거래 리스크를 통제했습니다.
+              전수조사 감사로 다중 체결 정합성 버그를 발견·수정했습니다.
+            </p>
+
+            <footer class="project-foot">
+              <div class="project-badges">
+                <span class="badge">의존성 0 (Node 빌트인)</span>
+                <span class="badge">RFC6455 WebSocket 자체 구현</span>
+                <span class="badge">손실 서킷브레이커</span>
+                <span class="badge">node:sqlite(WAL) 저널</span>
+                <span class="badge">전수조사 감사</span>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://github.com/yeodh10/KoreanInvestment" target="_blank" rel="noopener noreferrer">
+                GitHub에서 보기<span class="sr-only">(새 탭에서 열림)</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 4: PEACEMINUSONE 팬 아카이브 -->
+          <article class="card card--hover project-card reveal">
+            <header class="project-head">
+              <div>
+                <h3 class="project-title">PEACEMINUSONE 팬 아카이브</h3>
+                <p class="project-tagline">브랜드의 2013~현재 역사와 316개 제품을 기록하는 다크 톤 아카이브 — Astro + GSAP 스크롤 인터랙션</p>
+              </div>
+              <span class="badge">Astro · 316 제품</span>
+            </header>
+
+            <p class="project-overview">
+              PEACEMINUSONE의 역사와 316개 제품을 기록하는 <strong>비공식 팬 아카이브</strong>(쇼핑몰이 아닌 "기록관")입니다. Astro 정적 생성과 GSAP ScrollTrigger 기반 스크롤 인터랙션으로 구성하고,
+              파일명 규칙 → <code>products.json</code> 자동 스캔과 GitHub Actions 배포 파이프라인을 갖췄습니다.
+            </p>
+
+            <div class="project-block">
+              <h4>핵심 기능</h4>
+              <ul class="feature-list">
+                <li>316개 제품 아카이브 — 연도·카테고리 멀티 필터, 제품 상세 이미지 캐러셀</li>
+                <li>타임라인 · 전시 갤러리 · Philosophy · "NO SIGNAL" 샵 등 컨셉 페이지</li>
+                <li>GSAP ScrollTrigger 스크롤 애니메이션(밝기 변화·캐스케이드 등장·패럴랙스)</li>
+                <li>npm run scan — 에셋 파일명 규칙 → products.json 자동 동기화</li>
+                <li>GitHub Actions 자동 빌드·배포(GitHub Pages)</li>
+                <li>반응형 · prefers-reduced-motion · 접근성(터치 오버레이·sr-only)</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>기술 스택</h4>
+              <ul class="tag-list">
+                <li class="tag tag--accent">Astro 5</li>
+                <li class="tag tag--accent">GSAP (ScrollTrigger)</li>
+                <li class="tag">CSS Variables</li>
+                <li class="tag">정적 생성(SSG)</li>
+                <li class="tag">GitHub Actions</li>
+                <li class="tag">GitHub Pages</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>역할</h4>
+              <p class="project-overview">개인 프로젝트(프론트엔드·디자인) · 비공식 팬메이드</p>
+            </div>
+
+            <p class="project-highlight">
+              <strong>디자인 하이라이트.</strong>
+              브랜드의 "minus one" 철학을 여백과 "NO SIGNAL" 상태로 번역하고, 이미지가 없는 항목도 플레이스홀더로 처리해 사이트가 항상 완성 상태를 유지합니다.
+              파일명→메타 자동 스캔으로 콘텐츠 파이프라인을 자동화했습니다.
+            </p>
+
+            <footer class="project-foot">
+              <div class="project-badges">
+                <span class="badge">Astro 5 + GSAP</span>
+                <span class="badge">316 제품 큐레이션</span>
+                <span class="badge">스크롤 인터랙션</span>
+                <span class="badge">자동 에셋 스캔</span>
+                <span class="badge">GitHub Actions 배포</span>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://yeodh10.github.io/pmo-fan-archive/" target="_blank" rel="noopener noreferrer">
+                라이브 보기<span class="sr-only">(새 탭에서 열림)</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 5: 개인화 학습 AI 챗봇 -->
+          <article class="card card--hover project-card reveal">
+            <header class="project-head">
+              <div>
+                <h3 class="project-title">개인화 학습 AI 챗봇</h3>
+                <p class="project-tagline">쓸수록 사용자를 기억하고 적응하는 개인화 챗봇 — Claude API 기반, 장기기억·RAG로 확장 중</p>
+              </div>
+              <span class="badge">Python · 진행 중</span>
+            </header>
+
+            <p class="project-overview">
+              "쓸수록 나를 기억하고 적응하는" 개인화 챗봇입니다. Python과 Anthropic Claude API로 멀티턴 대화 CLI(Phase 1)를 구현했고,
+              장기 기억(대화에서 사실 추출·저장·재주입) → 임베딩 RAG → 말투·관심사 개인화를 <strong>Phase 단위로 확장</strong>하고 있습니다.
+            </p>
+
+            <div class="project-block">
+              <h4>핵심 기능</h4>
+              <ul class="feature-list">
+                <li>멀티턴 대화 CLI(Claude API) — Phase 1 완료</li>
+                <li>장기 기억 — 대화에서 사실 추출·저장·재주입 <em>(예정)</em></li>
+                <li>임베딩 기반 RAG 검색 <em>(예정)</em></li>
+                <li>말투·관심사 개인화 <em>(예정)</em></li>
+                <li>.env 키 관리 · 모델 교체(Opus/Haiku) 지원</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>기술 스택</h4>
+              <ul class="tag-list">
+                <li class="tag tag--accent">Python 3.12</li>
+                <li class="tag tag--accent">Anthropic Claude API</li>
+                <li class="tag">python-dotenv</li>
+                <li class="tag">RAG (예정)</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>역할</h4>
+              <p class="project-overview">개인 프로젝트(AI · 진행 중)</p>
+            </div>
+
+            <p class="project-highlight">
+              <strong>방향.</strong>
+              단순 챗봇을 넘어 "기억하고 적응하는" 개인화를 목표로, 장기기억 → RAG → 개인화를 단계적으로 쌓아 올리는 중입니다.
+            </p>
+
+            <footer class="project-foot">
+              <div class="project-badges">
+                <span class="badge">Claude API</span>
+                <span class="badge">멀티턴 대화(Phase 1)</span>
+                <span class="badge">장기기억·RAG 확장 중</span>
+                <span class="badge">Phase 기반 개발</span>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://github.com/yeodh10" target="_blank" rel="noopener noreferrer">
+                GitHub에서 보기<span class="sr-only">(새 탭에서 열림)</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 6: 카카오톡 오픈채팅 관리봇 -->
+          <article class="card card--hover project-card reveal">
+            <header class="project-head">
+              <div>
+                <h3 class="project-title">카카오톡 오픈채팅 관리봇</h3>
+                <p class="project-tagline">오픈채팅 운영을 돕는 반자동 관리봇 — 명령어·중복닉 감지·금지어 경고·관리자 호출 (메신저봇R)</p>
+              </div>
+              <span class="badge">약 388줄 · MessengerBotR</span>
+            </header>
+
+            <p class="project-overview">
+              24시간 오픈채팅 커뮤니티 운영을 돕는 관리봇입니다. 카카오톡 오픈채팅은 공식 봇 API가 없어 <strong>메신저봇R</strong>(안드로이드, Rhino JS)로 구현했으며,
+              플랫폼 제약(자동 강퇴 불가) 안에서 감지·경고·관리자 호출까지 자동화합니다.
+            </p>
+
+            <div class="project-block">
+              <h4>핵심 기능</h4>
+              <ul class="feature-list">
+                <li>메시지 이벤트 리스너 기반 명령어 응답</li>
+                <li>중복 닉네임 감지</li>
+                <li>금지어 경고 + 누적 관리</li>
+                <li>관리자 호출 — 추방은 사람이, 봇은 감지·경고까지(플랫폼 제약 준수)</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>기술 스택</h4>
+              <ul class="tag-list">
+                <li class="tag tag--accent">JavaScript (Rhino)</li>
+                <li class="tag tag--accent">메신저봇R</li>
+                <li class="tag">Android</li>
+                <li class="tag">이벤트 리스너</li>
+              </ul>
+            </div>
+
+            <div class="project-block">
+              <h4>역할</h4>
+              <p class="project-overview">개인 프로젝트(커뮤니티 운영 자동화)</p>
+            </div>
+
+            <p class="project-highlight">
+              <strong>설계 포인트.</strong>
+              공식 API가 없는 환경에서 비공식 도구의 제약(자동 강퇴·강제 닉변 불가)을 정확히 이해하고, 가능한 범위(감지·경고·관리자 호출)로 운영 부담을 줄이도록 설계했습니다.
+            </p>
+
+            <footer class="project-foot">
+              <div class="project-badges">
+                <span class="badge">메신저봇R (Rhino JS)</span>
+                <span class="badge">중복닉·금지어 감지</span>
+                <span class="badge">플랫폼 제약 준수 설계</span>
               </div>
               <a class="btn btn-ghost btn-sm" href="https://github.com/yeodh10" target="_blank" rel="noopener noreferrer">
                 GitHub에서 보기<span class="sr-only">(새 탭에서 열림)</span>
