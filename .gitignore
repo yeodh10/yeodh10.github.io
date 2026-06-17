@@ -14,3 +14,6 @@ _*.py
 
 # Python bytecode cache (from running/compiling the local build scripts)
 __pycache__/
+
+# 로컬 전용 핸드오프 노트(공개 repo 제외)
+CLAUDE.md
